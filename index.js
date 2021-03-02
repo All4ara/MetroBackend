@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 //Server setup
 app.get('/', (req, res) => {
-    res.send('Hello to MetroBroker API')
+    res.send('Hello to Metro API')
 })
 
 const PORT = process.env.PORT || 1347;
