@@ -5,6 +5,7 @@ const postSchema = mongoose.Schema({
     propertyType: String,
     agent: String,
     selectedFile: String,
+    price: String,
     likeCount: {
         type: Number,
         default: 0
