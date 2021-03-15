@@ -6,9 +6,9 @@ const postSchema = mongoose.Schema({
     agent: String,
     selectedFile: String,
     price: String,
-    likeCount: {
-        type: Number,
-        default: 0
+    likes: {
+        type: [String],
+        default: [],
     },
     soldOn: {
         type: Date,
