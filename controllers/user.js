@@ -24,7 +24,7 @@ export const signin = async (req, res) => {
 }
 
 export const signup = async (req, res) => {
-    const { email, password, confirmPassword, firstName, lastName, selectedFile, phone } = req.body;
+    const { email, password, confirmPassword, firstName, lastName, selectedFile, phone, officePhone } = req.body;
 
     try {
         const existingUser = await User.findOne({ email });
@@ -35,7 +35,7 @@ export const signup = async (req, res) => {
 
         const hashedPass = await bcrypt.hash(password, 12);
 
-        const result = await User.create({ email, password: hashedPass, name: `${firstName} ${lastName}`, selectedFile, phone });
+        const result = await User.create({ email, password: hashedPass, name: `${firstName} ${lastName}`, selectedFile, phone, officePhone });
 
         const token = jwt.sign({ email: result.email, id: result._id }, 'test', { expiresIn: '1h' });
 

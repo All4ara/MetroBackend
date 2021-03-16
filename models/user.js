@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema({
     password: { type: String, required: true },
     selectedFile: { type: String, required: true },
     phone: { type: String, required: true },
+    officePhone: { type: String, required: true },
     id: { type: String },
 })
 

@@ -7,6 +7,7 @@ const postSchema = mongoose.Schema({
     agent: String,
     selectedFile: String,
     price: String,
+    stats: String,
     likes: {
         type: [String],
         default: [],
