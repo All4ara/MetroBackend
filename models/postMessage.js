@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const postSchema = mongoose.Schema({
     address: String,
     propertyType: String,
+    name: String,
     agent: String,
     selectedFile: String,
     price: String,
