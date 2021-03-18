@@ -3,6 +3,16 @@ import jwt from 'jsonwebtoken';
 
 import User from '../models/user.js';
 
+export const getUsers = async (req, res) => {
+    try {
+        const allUsers = await User.find();
+
+        res.status(200).json(allUsers);
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+}
+
 export const signin = async (req, res) => {
     const { email, password } = req.body;
 
