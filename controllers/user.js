@@ -13,6 +13,16 @@ export const getUsers = async (req, res) => {
     }
 }
 
+export const getUser = async (req, res) => {
+    try {
+        const currUser = await User.findById(req.params.id);
+
+        res.status(200).json(currUser);
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+}
+
 export const signin = async (req, res) => {
     const { email, password } = req.body;
 
